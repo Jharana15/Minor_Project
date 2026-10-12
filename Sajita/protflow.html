@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sampada Thapaliya | Executive Portfolio</title>
+  <style>
+    /* Executive Navy & Gold Palette */
+    :root {
+      --bg-navy: #061739;
+      --bg-navy-dark: #041028;
+      --accent-gold: #f2c46d;
+      --accent-gold-hover: #e0b053;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-app: #f8fafc;
+      --bg-card: #ffffff;
+      --border-subtle: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Sticky Navigation Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(90deg, #061739 0%, #0a2150 50%, #0c2859 100%);
+      color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(6, 23, 57, 0.3);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--accent-gold);
+      background: linear-gradient(135deg, #0c1833, #061025);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent-gold);
+      font-size: 16px;
+    }
+
+    .brand-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-menu a {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      transition: color 0.2s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent-gold);
+    }
+
+    .btn-cv {
+      background: var(--accent-gold);
+      color: #061739;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-cv:hover {
+      background: var(--accent-gold-hover);
+    }
+
+    /* Executive Hero Banner */
+    .hero {
+      background: var(--bg-navy);
+      color: white;
+      padding: 60px 0;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr 280px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-profile-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .hero-profile-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      border: 2px solid rgba(242, 196, 109, 0.4);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      background-color: #0a2150;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+
+    .hero-name {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero-name span {
+      color: var(--accent-gold);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 520px;
+      margin-bottom: 25px;
+    }
+
+    .pillars-list {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .pillar-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pillar-card span {
+      color: var(--accent-gold);
+      font-weight: bold;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      background: rgba(6, 23, 57, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    /* Side Contact Info */
+    .hero-side-info {
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      padding-left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .info-item label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    .info-item span, .info-item a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.9);
+      transition: color 0.2s;
+    }
+
+    .info-item a:hover {
+      color: var(--accent-gold);
+      text-decoration: underline;
+    }
+
+    /* Executive Cards Section */
+    .executive-section {
+      padding: 60px 0;
+    }
+
+    .section-heading {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--text-main);
+      text-align: center;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .exec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .exec-card h3 {
+      font-size: 20px;
+      margin-bottom: 14px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .exec-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .badge-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .chip {
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #bfdbfe;
+    }
+
+    .chip-gold {
+      background: #fefce8;
+      color: #854d0e;
+      border-color: #fef08a;
+    }
+
+    /* Contact Form Section */
+    .contact-section {
+      padding: 60px 0;
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--bg-navy);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-navy-dark);
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 13px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-side-info {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-left: 0;
+        padding-top: 20px;
+      }
+      .nav-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#home" class="brand">
+        <div class="brand-badge">ST</div>
+        <div>
+          <div class="brand-title">Sampada Thapaliya</div>
+          <div class="brand-subtitle">Business Management | Education | Finance</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Executive Profile</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn-cv">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      
+      <!-- Profile Picture with Automatic Multi-Step Fallback -->
+      <div class="hero-profile-container">
+        <img 
+          src="profile.jpg" 
+          onerror="
+            if (!this.dataset.step) {
+              this.dataset.step = '1';
+              this.src = 'profile.jpg.jpg';
+            } else if (this.dataset.step === '1') {
+              this.dataset.step = '2';
+              this.src = '655757914_1952208765664777_1549512193121928692_n.jpg';
+            } else {
+              this.onerror = null;
+              this.src = 'https://via.placeholder.com/320x380?text=Sampada+Thapaliya';
+            }
+          " 
+          alt="Sampada Thapaliya" 
+          class="hero-profile-img"
+        >
+      </div>
+
+      <!-- Main Bio -->
+      <div>
+        <p class="hero-tag">BUSINESS &amp; ACADEMIC PROFESSIONAL</p>
+        <h1 class="hero-name">Sampada <span>Thapaliya</span></h1>
+        <p class="hero-subtitle">BBS Graduate | MBS Scholar | Academic Instructor</p>
+        <p class="hero-desc">
+          An enthusiastic business scholar and educator with a strong foundation in business studies and management, backed by 1 year of hands-on teaching experience.
+        </p>
+
+        <!-- Key Pillars -->
+        <div class="pillars-list">
+          <div class="pillar-card"><span>•</span> Business Studies</div>
+          <div class="pillar-card"><span>•</span> Academic Teaching</div>
+          <div class="pillar-card"><span>•</span> Management &amp; Finance</div>
+        </div>
+
+        <!-- Action Buttons with Social Links -->
+        <div class="hero-actions">
+          <a href="#contact" class="btn-cv">Get In Touch</a>
+          <a href="https://www.linkedin.com/in/sampadathapaliya" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
+          <a href="https://www.facebook.com/sampadathapaliya" target="_blank" rel="noopener noreferrer" class="btn-secondary">Facebook</a>
+        </div>
+      </div>
+
+      <!-- Quick Info -->
+      <div class="hero-side-info">
+        <div class="info-item">
+          <label>Status</label>
+          <span>MBS Scholar (Running)</span>
+        </div>
+        <div class="info-item">
+          <label>Education</label>
+          <span>BBS Graduate | MBS (Ongoing)</span>
+        </div>
+        <div class="info-item">
+          <label>Experience</label>
+          <span>1 Year Teaching Experience</span>
+        </div>
+        <div class="info-item">
+          <label>Social Profiles</label>
+          <a href="https://www.linkedin.com/in/sampadathapaliya" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          <a href="https://www.facebook.com/sampadathapaliya" target="_blank" rel="noopener noreferrer">Facebook Profile</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Executive Profile & Qualifications Grid -->
+  <section id="about" class="executive-section">
+    <div class="container">
+      <h2 class="section-heading">Executive Overview &amp; Qualifications</h2>
+      
+      <div class="cards-grid">
+        
+        <!-- Card 1: Profile -->
+        <div class="exec-card">
+          <h3>Executive Profile</h3>
+          <p>
+            Sampada Thapaliya is a business management professional dedicated to academic excellence and educational leadership. With a completed Bachelor of Business Studies (BBS) and ongoing Master of Business Studies (MBS) degree, she brings strong analytical and organizational capabilities into classroom instruction and management roles.
+          </p>
+          <div class="badge-group">
+            <span class="chip">Leadership</span>
+            <span class="chip">Academic Instruction</span>
+            <span class="chip">Business Analysis</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Education -->
+        <div class="exec-card" id="education">
+          <h3>Education Background</h3>
+          <p>
+            <strong>Master of Business Studies (MBS)</strong><br>
+            <small style="color: #059669; font-weight: 600;">Currently Running</small><br>
+            Advanced studies in financial management, strategic planning, and managerial decision-making.
+          </p>
+          <hr style="margin: 12px 0; border: none; border-top: 1px solid #e2e8f0;">
+          <p>
+            <strong>Bachelor of Business Studies (BBS)</strong><br>
+            <small style="color: #2563eb; font-weight: 600;">Completed</small><br>
+            Comprehensive coursework covering accounting, business finance, marketing, and organizational management.
+          </p>
+        </div>
+
+        <!-- Card 3: Experience -->
+        <div class="exec-card" id="experience">
+          <h3>Teaching Experience</h3>
+          <p>
+            <strong>Academic Instructor (1 Year)</strong><br>
+            Delivered structured curriculum lessons, fostered student engagement, and guided academic progress. Demonstrated expertise in communication, classroom management, and translating complex business concepts into engaging learning experiences.
+          </p>
+          <div class="badge-group">
+            <span class="chip chip-gold">1 Year Experience</span>
+            <span class="chip chip-gold">Mentorship</span>
+            <span class="chip chip-gold">Curriculum Planning</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-heading">Contact Sampada</h2>
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-cv" style="width: 100%; justify-content: center; border: none; cursor: pointer; padding: 12px;">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Sampada Thapaliya. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
