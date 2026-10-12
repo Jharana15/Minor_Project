@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <style>
+        /* Element Selector  */
+        div{
+            /* background-color: rgb(242, 160, 203); */
+        }
+        /* Class Selector */
+        .yellow{
+            background-color: yellow
+        }
+        /* Id Selector */
+        #green{
+            background-color: green
+        }
+        /* child selector */
+        /* direct child vaya matra child lai select garxa */
+        div>p{
+            color: rgb(30, 153, 100);
+            background-color: rgb(242, 160, 203);
+        }
+        /* descendant selector */
+        div p{
+            color: rgb(60, 2, 60);
+            background-color: brown;
+        }
+        /* universal selector */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* Pseudo selector */
+        a:visited{
+            color: rgb(26, 26, 232);
+        }
+        a:link{
+            color:rgb(105, 17, 132)
+        }
+        a:active{
+            background-color: mediumseagreen;
+        }
+        a:hover{
+            background-color: rgb(232, 26, 26);
+        }
+        p:first-child{
+            color: rgb(232, 26, 26);
+            background-color: rgb(176, 189, 176);
+        }
+
+    </style>
+</head>
+<body>
+    <main class="one">
+    <p>I am first</p>
+    <P>I am from Dhangadhi</P>
+    </main>
+
+    <div class="yellow">
+        this is div guyss
+        <article>
+            <p>this is child of div</p>
+        </article>
+    </div>
+    <div id="green">
+        this is another div 
+    </div>
+    <a href="https://www.w3schools.com/" target="_blank">click me for the notes</a>
+    <a href="https://www.GitHub2.com/" target="_blank">GitHub</a>
+
+    
+</body>
+</html>
